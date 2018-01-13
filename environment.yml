@@ -1,0 +1,11 @@
+name: translate_r_posts
+dependencies:
+- python=3.6
+- jupyter
+- matplotlib
+- numpy
+- pandas
+- pymc3
+- scikit-learn
+- scipy
+- seaborn
