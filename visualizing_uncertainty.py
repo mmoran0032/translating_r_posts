@@ -70,12 +70,14 @@ new_sales.head()
 new_sales['lower'] = new_sales['sales'] * (1 - 2 * new_sales['e_sales'] / 100)
 new_sales['upper'] = new_sales['sales'] * (1 + 2 * new_sales['e_sales'] / 100)
 
-plt.plot(new_sales['date'].values,
-         new_sales['sales'],
-         'C0-')
-plt.fill_between(new_sales['date'].values,
-                 new_sales['lower'],
-                 new_sales['upper'],
-                 color='C0',
-                 alpha=0.25)
+fig, ax = plt.subplots()
+fig.set_tight_layout(False)
+ax.plot(new_sales['date'].values,
+        new_sales['sales'],
+        'C0-')
+ax.fill_between(new_sales['date'].values,
+                new_sales['lower'],
+                new_sales['upper'],
+                color='C0',
+                alpha=0.25)
 plt.show()
